@@ -15,3 +15,10 @@ def __repr__(self):
 
 __str__ = __repr__
 
+class StudentInfo(models.Model):
+    student = models.OneToOneField(Student, on_delete=models.CASCADE, verbose_name="student")
+    level = models.IntegerField()
+    section = models.CharField(max_length=1)
+    rollno = models.IntegerField()
+    
+  
