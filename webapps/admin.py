@@ -12,6 +12,8 @@ class StudentInfoAdmin(admin.ModelAdmin):
     list_display = ("student", "level", "section", "rollno",)
 
 
+
+
 admin.site.register(Student, StudentAdmin)
 admin.site.register(StudentInfo, StudentInfoAdmin)
 # Register your models here.
