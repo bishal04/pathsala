@@ -20,7 +20,7 @@ class StudentInfo(models.Model):
     level = models.IntegerField()
     section = models.CharField(max_length=1)
     rollno = models.IntegerField()
-    # Sub1 = models.ForeignKey(max_length=20, choices=(("English"), ("Math"), ("Science"), ("ComputerScience"),("Accounts")))
+    # Sub1 = models.ForeignKey(max_length=20, choices=(("E", "English"), ("M", "Math"), ("S", "Science"), ("C", "ComputerScience"),("A", "Accounts")))
 
 
    

@@ -15,4 +15,4 @@ def get_student(request, webapps_std_id):
     student = Student.objects.get(pk=webapps_std_id)
     
 
-    return render(request,  "get_students.html", context={"students": student})
+    return render(request,  "get_students.html", context={"student": student})
