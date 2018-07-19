@@ -16,3 +16,5 @@ def get_student(request, webapps_std_id):
     
 
     return render(request,  "get_students.html", context={"student": student})
+
+    
