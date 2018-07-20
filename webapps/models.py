@@ -35,6 +35,7 @@ class English(models.Model):
     pass_marks = models.IntegerField()
     marks_obtained = models.DecimalField(max_digits=5, decimal_places=2)
     remarks = models.TextField()
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, verbose_name="teacher", default=0)
 
 class Maths(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, verbose_name="student", default=0)
@@ -42,6 +43,8 @@ class Maths(models.Model):
     pass_marks = models.IntegerField()
     marks_obtained = models.DecimalField(max_digits=5, decimal_places=2)
     remarks = models.TextField()
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, verbose_name="teacher", default=0)
+
 
 class Science(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, verbose_name="student", default=0)
@@ -49,6 +52,7 @@ class Science(models.Model):
     pass_marks = models.IntegerField()
     marks_obtained = models.DecimalField(max_digits=5, decimal_places=2)
     remarks = models.TextField()          
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, verbose_name="teacher", default=0)
 
 class ComputerScience(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, verbose_name="student", default=0)
@@ -56,6 +60,7 @@ class ComputerScience(models.Model):
     pass_marks = models.IntegerField()
     marks_obtained = models.DecimalField(max_digits=5, decimal_places=2)
     remarks = models.TextField()    
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, verbose_name="teacher", default=0)
 
 class Accounts(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, verbose_name="student", default=0)
@@ -63,5 +68,12 @@ class Accounts(models.Model):
     pass_marks = models.IntegerField()
     marks_obtained = models.DecimalField(max_digits=5, decimal_places=2)
     remarks = models.TextField()
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, verbose_name="teacher", default=0)
 
- 
+
+ class Teacher(models.Model):
+     name = models.CharField(max_length=50)
+     address = models.TextField()
+     telephone = models.CharField(max_length=15)
+     subject = models.CharField(max_length=20)
+     
