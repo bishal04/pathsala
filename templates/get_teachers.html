@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block main %}
+<h2>Teachers</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Telephone</th>
+            <th>Subject</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ teacher.name }}</td>
+            <td>{{ teacher.address }}</td>
+            <td>{{ teacher.telephone }}</td>
+            <td>{{ teacher.subject }}</td>
+        </tr>
+       
+    </tbody>
+
+</table>
+{% endblock %}

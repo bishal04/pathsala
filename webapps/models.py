@@ -27,6 +27,20 @@ class StudentInfo(models.Model):
     Sub4 = models.CharField(max_length=20, choices=(("E", "English"), ("M", "Math"), ("S", "Science"), ("C", "ComputerScience"),("A", "Accounts")), default='select subject')
 
 
+class Teacher(models.Model):
+    name = models.CharField(max_length=50)
+    address = models.TextField()
+    telephone = models.CharField(max_length=15)
+    subject = models.CharField(max_length=20)
+
+
+    def __repr__(self):
+        return self.name
+
+    __str__ = __repr__
+
+
+     
 
 
 class English(models.Model):
@@ -37,7 +51,7 @@ class English(models.Model):
     remarks = models.TextField()
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, verbose_name="teacher", default=0)
 
-class Maths(models.Model):
+class Math(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, verbose_name="student", default=0)
     total_marks = models.IntegerField()
     pass_marks = models.IntegerField()
@@ -62,7 +76,7 @@ class ComputerScience(models.Model):
     remarks = models.TextField()    
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, verbose_name="teacher", default=0)
 
-class Accounts(models.Model):
+class Account(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, verbose_name="student", default=0)
     total_marks = models.IntegerField()
     pass_marks = models.IntegerField()
@@ -71,9 +85,4 @@ class Accounts(models.Model):
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, verbose_name="teacher", default=0)
 
 
- class Teacher(models.Model):
-     name = models.CharField(max_length=50)
-     address = models.TextField()
-     telephone = models.CharField(max_length=15)
-     subject = models.CharField(max_length=20)
-     
+   
